@@ -11,6 +11,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <style>
+            .question {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 10px;
+                margin-top: 50px;
+            }
+
+            label {
+                display: block;
+    padding: 5px;}
+
+    button#submit {
+        background: #D280D9;
+        color: white;
+        box-shadow: none;
+        border: 0;
+        padding: 10px 30px;
+
+    }
+
+    a {
+        color: #D280D9;
+    }
+        </style>
     </head>
     <body>
         <div class="modal">
@@ -32,6 +57,7 @@
               <div class="container">
                 <p class="title">
                     <div id="quiz"></div>
+                    <br>
                     <button id="submit">Get Results</button>
                     <div id="results"></div>
                 </p>
@@ -54,7 +80,7 @@
 		correctAnswer: 'b'
 	},
 	{
-		question: "What month is special to us? Need a hint? <a href='/uploads/'>Click here</a>",
+		question: "What month is special to us? Need a hint?",
 		answers: {
 			a: 'September',
 			b: 'November',
@@ -148,7 +174,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 		}
 
 		// show number of correct answers out of total
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length + ' Really? I had a feeling you would get this wrong' ;
         
         if (numCorrect == 3) {
             resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length + ' <a href="/second">Click Here</a> to view the puzzle';
